@@ -21,11 +21,11 @@ The AI Travel Planner for Students solves this by using Generative AI and real-t
 
 🏗️ Tech Stack
 
-Frontend: React.js
+Frontend: HTML, CSS, JavaScript
 
-Language: TypeScript (.ts and .json config files
+Backend: Python (FastAPI)
 
-Styling: Tailwind CSS
+DataBase: MongoDB
 
 APIs:
 
