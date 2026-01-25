@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPHERE PLANNER - Student Travel Planner</title>
+    <link rel="stylesheet" href="trip-planner.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div>
+                    <h1>🌐 SPHERE PLANNER</h1>
+                    <p class="subtitle">AI-Powered Budget-Friendly Trip Planning for Students</p>
+                </div>
+                <div class="header-actions">
+                    <span id="userEmail" class="user-email"></span>
+                    <button id="logoutBtn" class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="card">
+                <h2>Trip Details</h2>
+                <form id="tripForm">
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" placeholder="e.g., Agra, Tokyo, New York" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration">Duration (days)</label>
+                        <input type="number" id="duration" min="1" max="30" value="3" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" id="startDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interests">Interests</label>
+                        <select id="interests" multiple size="4">
+                            <option value="culture">Culture & Museums</option>
+                            <option value="food">Food & Cuisine</option>
+                            <option value="nature">Nature & Outdoors</option>
+                            <option value="adventure">Adventure Sports</option>
+                            <option value="nightlife">Nightlife</option>
+                            <option value="history">Historical Sites</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="photography">Photography</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferences">Special Preferences</label>
+                        <textarea id="preferences" placeholder="e.g.  avoid crowded places, prefer public transport"></textarea>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>Budget Planning</h2>
+                <div class="budget-display">
+                    <h3>Total Budget</h3>
+                    <div class="amount">₹<span id="budgetAmount">40000</span></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Set Your Budget (₹)</label>
+                    <input type="range" id="budget" min="5000" max="400000" value="40000" step="1000">
+                </div>
+
+                <div class="budget-breakdown">
+                    <div class="budget-item">
+                        <div class="budget-item-label">Accommodation</div>
+                        <div class="budget-item-value">₹<span id="accomBudget">16000</span></div>
+                    </div>
+                    <div class="budget-item">
+                        <div class="budget-item-label">Food</div>
+                        <div class="budget-item-value">₹<span id="foodBudget">12000</span></div>
+                    </div>
+                    <div class="budget-item">
+                        <div class="budget-item-label">Activities</div>
+                        <div class="budget-item-value">₹<span id="actBudget">8000</span></div>
+                    </div>
+                    <div class="budget-item">
+                        <div class="budget-item-label">Transport</div>
+                        <div class="budget-item-value">₹<span id="transBudget">4000</span></div>
+                    </div>
+                </div>
+
+                <button id="generateBtn" style="margin-top: 20px;">Generate Travel Plan</button>
+            </div>
+        </div>
+
+        <div class="card itinerary-section">
+            <h2>Your Personalized Itinerary</h2>
+            <div id="itineraryContent" class="itinerary-content"></div>
+        </div>
+    </div>
+    <script src="trip-planner.js"></script>
+</body>
+</html>

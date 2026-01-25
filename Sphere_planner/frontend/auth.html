@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPHERE PLANNER - Login & Signup</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-header">
+                <h1>🌐 SPHERE PLANNER</h1>
+                <p>AI-Powered Budget-Friendly Trip Planning</p>
+            </div>
+
+            <!-- Login Form -->
+            <div class="form-container" id="loginForm" style="display: block;">
+                <h2>Welcome</h2>
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <div class="error-message" id="loginError"></div>
+                    <div class="success-message" id="loginSuccess"></div>
+                </form>
+
+                <p class="toggle-form">
+                    Don't have an account? <a href="#" onclick="toggleForms()">Sign Up</a>
+                </p>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="form-container" id="signupForm" style="display: none;">
+                <h2>Create Account</h2>
+                <form id="signupFormElement">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupEmail">Email Address</label>
+                        <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" placeholder="Create a password (min 6 characters)" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupConfirmPassword">Confirm Password</label>
+                        <input type="password" id="signupConfirmPassword" placeholder="Confirm your password" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                    <div class="error-message" id="signupError"></div>
+                    <div class="success-message" id="signupSuccess"></div>
+                </form>
+
+                <p class="toggle-form">
+                    Already have an account? <a href="#" onclick="toggleForms()">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

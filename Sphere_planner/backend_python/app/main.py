@@ -1,0 +1,26 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from app.routes import router as itineraries_router
+from app.routes_auth import router as auth_router
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+app = FastAPI(title='Sphere Planner API')
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(itineraries_router, prefix='/api/itineraries')
+app.include_router(auth_router, prefix='/api/auth')
+
+
+@app.get('/')
+async def root():
+    return {"status": "ok", "message": "Sphere_Planner Python backend"}
